@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+     <h1><center>Add Contact</center></h1>
+<div class="container">
+   
+    <form method="POST">
+        <label>Name:</label>
+        <input type ="text" name="name" required>
+        <label>Phone:</label>
+        <input type="text" name="phone" required>
+        <button type="submit">Add</button>
+    </form>
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+        <h1><center>Search Contact</center></h1>
+
+<div class="container">
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if result %}
+        <div class="result">
+            <p>Found: {{ result.name }} - {{ result.phone }}</p>
+        </div>
+    {% elif result is not none %}
+        <p>Not found</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</div>
+</body>
+</html>
